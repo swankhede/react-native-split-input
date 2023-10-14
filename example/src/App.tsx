@@ -1,31 +1,37 @@
-import * as React from 'react';
+import React, { useState } from 'react';
+import(SafeAreaView) from 'react-native';
+import {SplitInput} from 'react-native-split-input'
 
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-split-input';
-
-export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
+const App = () => {
+  
+  const [value,setValue]=useState<any>('')
+  const handleTexChange=(val:any)=>{
+   
+      let reg=/^[0-9]{0,}$/
+      console.log("reg",reg.test(val))
+      if(reg.test(val)){
+        setValue(val)
+      
+    }
+  }
 
   return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-    </View>
+    <SafeAreaView style={{flex:1}}>
+      <SplitInput
+      digits={6}
+      value={value}
+      setValue={setValue}
+      keyboardType={'numeric'}
+      autoFocus={false}
+      onChangeText={(val:any)=>handleTexChange(val)}
+      focusBorderColor={'cyan'}
+      focusBackgroundColor={'grey'}
+      focusBorderWidth={2}
+      
+      />
+      
+    </SafeAreaView>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
-  },
-});
+export default App;
