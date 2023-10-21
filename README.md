@@ -13,7 +13,7 @@ npm install react-native-split-input
 ```js
 import React, { useState } from 'react';
 import(SafeAreaView) from 'react-native';
-import {SplitInput} from 'react-native-split-input'
+import SplitInput from 'react-native-split-input'
 
 const App = () => {
   
