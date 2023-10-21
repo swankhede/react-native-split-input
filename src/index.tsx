@@ -21,6 +21,7 @@ const SplitInput = ({
   focusBorderWidth = 2,
   focusBorderColor,
   focusBackgroundColor,
+  inputTextStyle={}
 }: any) => {
   const inputArray = new Array(digits).fill(0);
   const inputRef = useRef<any>();
@@ -92,7 +93,10 @@ const SplitInput = ({
             currentIndex == index ? focusBackgroundColor : 'transparent',
           ...inputStyle,
         }}>
-        <Text>{value[index]}</Text>
+
+        <Text style={[styles.text,inputTextStyle]}>{!value[index] && index == value.length && currentIndex==index
+                    ? "|"
+                    : value[index]}</Text>
       </TouchableOpacity>
     );
   }
@@ -131,6 +135,10 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     padding: 10,
   },
+  text:{
+    textAlign:'center',
+    fontSize:20
+  }
 });
 
 export default SplitInput;
