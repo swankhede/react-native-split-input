@@ -1,6 +1,6 @@
 {
   "name": "react-native-split-input",
-  "version": "0.1.0",
+  "version": "1.0.3",
   "description": "otp input for react native",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -31,21 +31,29 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "clean": "del-cli lib",
-    "prepare": "bob build",
+   
     "release": "release-it"
   },
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "android",
+    "otp",
+    "otp input",
+    "pin input",
+    "split input"
+
   ],
-  "repository": "https://github.com/swankhede/react-native-split-input/react-native-split-input",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/swankhede/react-native-split-input"
+  },
   "author": "swan <sskwankhede@gmail.com> (https://github.com/swankhede/react-native-split-input)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/swankhede/react-native-split-input/react-native-split-input/issues"
+    "url": "https://github.com/swankhede/react-native-split-input/issues"
   },
-  "homepage": "https://github.com/swankhede/react-native-split-input/react-native-split-input#readme",
+  "homepage": "https://github.com/swankhede/react-native-split-input/#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
@@ -156,5 +164,8 @@
         }
       ]
     ]
+  },
+  "directories": {
+    "example": "example"
   }
 }
